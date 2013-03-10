@@ -1,10 +1,7 @@
 //
 //  MeterTableOC.m
-//  genome
 //
-//  Created by Warren Burton on 06/06/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+
 
 #import "MeterTableOC.h"
 
@@ -22,6 +19,7 @@ float inRoot = 2.0;
 
 
 -(void)setupWithMinDB:(float)minDB tableSize:(size_t)inTableSize root:(float)aRoot{
+    
     mMinDecibels = minDB;
     mDecibelResolution = mMinDecibels / (inTableSize - 1); 
     mScaleFactor = 1.0 / mDecibelResolution;
@@ -66,6 +64,14 @@ float inRoot = 2.0;
     return self;
 
 }
+
+-(id)init{
+    self = [super init];
+    if (self) {
+        [self setupWithMinDB:inMinDecibels tableSize:inTableSize root:inRoot];
+    }
+}
+
 
 -(float)valueAt:(float)inDecibels
 {
