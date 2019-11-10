@@ -70,6 +70,7 @@ float inRoot = 2.0;
     if (self) {
         [self setupWithMinDB:inMinDecibels tableSize:inTableSize root:inRoot];
     }
+    return self;
 }
 
 
